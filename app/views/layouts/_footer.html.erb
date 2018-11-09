@@ -1,0 +1,32 @@
+<footer id="footer">
+  <div class="footer_top">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInLeftBig">
+          <h2>Flickr Images</h2>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInDown">
+          <h2>Categories</h2>
+            <ul class="tag_nav">             
+              <% @catSections.each do |category| %>
+                <li><%= link_to category.name, category_path(category.id) %></li>
+               <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="footer_widget wow fadeInRightBig">
+          <h2>Contact Us</h2>
+          <p>Visit us at our Work Station</p>
+          <address>Infinity Prints, Adekunle Fajuyi Hall Annex Car Park, Obafemi Awolowo University, Ile-Ife, Osun State, Nigeria.</address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <p class="copyright">Copyright &copy; 2018 <a href="index.html">GreatIfe</a></p>
+    <p class="developer">Developed By iVhins fx & Omis</p>
+  </div>
+</footer>
