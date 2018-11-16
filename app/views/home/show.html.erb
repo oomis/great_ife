@@ -77,22 +77,22 @@
 
 
           <% @catSections.each do |category| %>
-            <div class="fashion">
-              <div class="single_post_content">
+            <div class="fashion" style ="padding: 10px;">
+              <div class="single_post_content" style ="background-color: Seashell">
                 <h2><span><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
                 
                 <ul class="business_catgnav wow fadeInDown">
                 
-                  <li>
+                  <%# <li>
                     <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img2.jpg"> <span class="overlay"></span> </a>
                       <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
                       <p></p>
                     </figure>
-                  </li>
+                  </li> %>
                 </ul>
                 <ul class="spost_nav">    
                         <% category.pages.each do |page| %>
-                    <li>           
+                    <li style ="border-top:2px solid DarkGray;">           
                         <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="<%= page.image.url %>"> </a>
                         <div class="media-body"> <a href="pages/single_page.html" class="catg_title"><%= link_to page.title, page_path(page.id) %></a> </div>
                         </div>

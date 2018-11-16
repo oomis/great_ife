@@ -1,20 +1,28 @@
 
 
 <% @pages.each do |page| %>
-          <div style = 'padding:20px;' >
-              <div style=' max-width: 100%!important; border-style:groove;
-padding: 14px;
-background-color: #d1e7f4;' class="single_post_content">
-                <ul class="spost_nav">
-                
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="#" class="media-left"> <img alt="gggg" width='100% !important' src=" <%= page.image.url %>"> </a>
-                      <div class="media-body"> <a href="#" class="catg_title"> <%= link_to page.title, page_path(page.id)%></a> </div>
-                      <div class="media-body"> <a href="#" class="catg_title"> <%=link_to raw page.body%></a> </div>
-                    </div>
-                  </li>
-                
-                </ul>
-              </div>
-            </div>
-            <% end %>
+            <div class="media-body"> <a href="#" class="catg_title"> <%#=link_to raw page.body%></a></div>
+          </div>
+         
+
+        </li>    
+      </ul>
+    </div>
+  </div> 
+  <div style='padding-top:15px; padding-bottom:15px;'>
+<div class="card" style=' width:69%; margin:auto; '>
+  <div class='row card-body'>
+  <div class='col-md-4'>
+  <img class='img-responsive' src="<%= page.image.url %>" alt="Avatar">
+  
+  </div>
+  <div class='col-md-8'>
+  <div  class="container">
+    <h4><b>   <%= link_to page.title, page_path(page.id)%> </b></h4> 
+    <p><%=link_to raw page.body%></p> 
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+<% end %>

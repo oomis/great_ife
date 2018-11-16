@@ -20,7 +20,7 @@
             <ul class="latest_postnav">
               <% @pageSections.each do |page| %>
                     <li>           
-                        <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
+                        <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="<%= page.image.url %>"> </a>
                         <div class="media-body"> <a href="pages/single_page.html" class="catg_title"><%= link_to page.title, page_path(page.id) %></a> </div>
                         </div>
                     </li>
