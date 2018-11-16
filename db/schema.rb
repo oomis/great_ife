@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_130622) do
+ActiveRecord::Schema.define(version: 2018_11_15_111339) do
+
+  create_table "accommodations", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -54,6 +62,22 @@ ActiveRecord::Schema.define(version: 2018_11_09_130622) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "oauevents", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.integer "category_id"
@@ -61,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_11_09_130622) do
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "sales", force: :cascade do |t|

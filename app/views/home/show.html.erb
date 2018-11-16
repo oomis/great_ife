@@ -3,7 +3,6 @@
       <div class="col-lg-12 col-md-12">
         <div class="latest_newsarea"> <span>Latest News</span>
           <ul id="ticker01" class="news_sticker">
-            
             <li><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My First News Item</a></li>
             <li><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My Second News Item</a></li>
             <li><a href="#"><img src="images/news_thumbnail3.jpg" alt="">My Third News Item</a></li>
@@ -30,37 +29,12 @@
       </div>
     </div>
   </section>
-  <section id="sliderSection">
-    <div class="row">
-      <div class="col-lg-8 col-md-8 col-sm-8">
-        <%= render 'layouts/carousel' %>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="latest_post">
-          <h2><span>Latest post</span></h2>
-          <div class="latest_post_container">
-            <div id="prev-button"><i class="fa fa-chevron-up"></i></div>           
-            <ul class="latest_postnav">
-                <% @pageSections.each do |page| %>
-                    <li>           
-                        <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"><%= link_to page.title, page_path(page.id) %></a> </div>
-                        </div>
-                    </li>
-              <% end %>
-            </ul>
-            
-            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <%= render 'layouts/carousel' %>
   <section id="contentSection">
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8">
         <div class="left_content">
-          <div class="single_post_content">
+          <%# <div class="single_post_content">
             <h2><span>News</span></h2>
             <div class="single_post_content_left">
               <ul class="business_catgnav  wow fadeInDown">
@@ -96,22 +70,16 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="fashion_technology_area">
+          </div> %>
 
 
-         
-            
-            
-          
-          
-             
 
 
-            
+
+          <% @catSections.each do |category| %>
             <div class="fashion">
               <div class="single_post_content">
-                <h2><span>Fashion</span></h2>
+                <h2><span><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
                 
                 <ul class="business_catgnav wow fadeInDown">
                 
@@ -122,95 +90,22 @@
                     </figure>
                   </li>
                 </ul>
-                <ul class="spost_nav">
-                <% @pageSections.each do |page| %>
+                <ul class="spost_nav">    
+                        <% category.pages.each do |page| %>
                     <li>           
-                        <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
+                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="<%= page.image.url %>"> </a>
                         <div class="media-body"> <a href="pages/single_page.html" class="catg_title"><%= link_to page.title, page_path(page.id) %></a> </div>
                         </div>
                     </li>
-              <% end %>
+                      <% end %>
+                      
                 </ul>
               </div>
             </div>
-            
+            <% end %>
             
 
-
-
-            
-            <div class="fashion">
-              <div class="single_post_content">
-                <h2><span>Fashion</span></h2>
-                <ul class="business_catgnav wow fadeInDown">
-                  <li>
-                    <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img2.jpg"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
-                      <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
-                    </figure>
-                  </li>
-                </ul>
-                <ul class="spost_nav">
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="technology">
-              <div class="single_post_content">
-                <h2><span>Events</span></h2>
-                <ul class="business_catgnav">
-                  <li>
-                    <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img3.jpg"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
-                      <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
-                    </figure>
-                  </li>
-                </ul>
-                <ul class="spost_nav">
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="single_post_content">
+          <%# <div class="single_post_content">
             <h2><span>Gallery</span></h2>
             <ul class="photograph_nav  wow fadeInDown">
               <li>
@@ -244,7 +139,7 @@
                 </div>
               </li>
             </ul>
-          </div>
+          </div> %>
           
         </div>
       </div>

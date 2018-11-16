@@ -46,6 +46,8 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'autoprefixer-rails'
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

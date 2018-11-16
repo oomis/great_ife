@@ -1,5 +1,5 @@
 ActiveAdmin.register Page do
-    permit_params :title, :body, :order, :category_id
+    permit_params :title, :body, :order, :category_id, :image
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -19,6 +19,7 @@ index do
     column :title, :sortable => :title
     column :category, :sortable => :category
     column :created_at, :sortable => :created_at
+    column :image, :sortable => :image
     column :order
     actions
 end
@@ -28,6 +29,7 @@ end
             f.input :title, :label => "Title"
             f.input :category, :label => "Category"
             f.input :body, as: :html_editor, :label => "Body"
+            f.input :image, :label => "Image"
             f.input :order, :label => "Order"
             f.actions
         end

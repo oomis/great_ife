@@ -1,0 +1,3 @@
+<% @mainEvents.each do |events| %>
+    <li class="dropdown"><%= link_to events.name, pages_path(events_id: event.id) %></li>
+<% end %>

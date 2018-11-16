@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def show
-    @category = Category.find_by(id: params[:category_id])
-    @pages = @category.pages
+    @page = Page.find(params[:id])
   end
 
   def index

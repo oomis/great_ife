@@ -1,0 +1,2 @@
+class Oauevent < ApplicationRecord
+end
