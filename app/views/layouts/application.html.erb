@@ -26,11 +26,15 @@
 <![endif]-->
 </head>
 <body>
+
 <div id="preloader">
   <div id="status">&nbsp;</div>
 </div>
 <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
+  
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   
   <%= render 'layouts/head' %>
   <%= yield %>

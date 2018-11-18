@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-    before_action :getPageSection, :getCatSection, :getHeadCarousel, :getMainEvent
+    before_action :getPageSection, :getCatSection, :getHeadCarousel, :getMainEvent, :getPageBody
+    
+    
     def home
 
     end
@@ -19,4 +21,8 @@ class ApplicationController < ActionController::Base
     def getMainEvent
         @HeadEvents = Oauevent.all
     end
+
+    def getPageBody
+    end
+
 end

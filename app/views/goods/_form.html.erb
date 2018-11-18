@@ -1,20 +1,15 @@
-<%= form_with(model: accommodation, local: true) do |form| %>
-  <% if accommodation.errors.any? %>
+<%= form_with(model: good, local: true) do |form| %>
+  <% if good.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(accommodation.errors.count, "error") %> prohibited this accommodation from being saved:</h2>
+      <h2><%= pluralize(good.errors.count, "error") %> prohibited this good from being saved:</h2>
 
       <ul>
-      <% accommodation.errors.full_messages.each do |message| %>
+      <% good.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
 
   <div class="field">
     <%= form.label :title %>
@@ -29,6 +24,11 @@
   <div class="field">
     <%= form.label :price %>
     <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
   </div>
 
   <div class="actions">
