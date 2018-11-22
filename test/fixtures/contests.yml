@@ -3,9 +3,11 @@
 one:
   title: MyString
   body: MyText
-  fee: 1
+  price: 1
+  image: MyString
 
 two:
   title: MyString
   body: MyText
-  fee: 1
+  price: 1
+  image: MyString

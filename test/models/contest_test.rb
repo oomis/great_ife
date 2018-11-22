@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OaueventTest < ActiveSupport::TestCase
+class ContestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

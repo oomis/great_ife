@@ -1,0 +1,2 @@
+module OaueHelper
+end

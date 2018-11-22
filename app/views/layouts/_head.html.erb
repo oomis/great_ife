@@ -4,9 +4,9 @@
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
-              <li><a href=""><%= link_to "Home", root_path %></a></li>
+              <li><a href="#"><%= link_to "Home", root_path %></a></li>
               <li><a href="#"><%= link_to "Sales", shops_path %></a></li>
-              <li><a href="#"><%= link_to "Oau Events", oauevents_path %></a></li>
+              <li><a href="#"><%#= link_to "Oau Events", oaue_path %></a></li>
               <li><a href="#"><%= link_to "Accommodation", accommodations_path %></a></li>
             </ul>
           </div>
@@ -35,7 +35,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav main_nav">
-          <li class="active"><a href="<% root_path %>"><span class="fa fa-home desktop-home"></span><span class="mobile-show"></span></a></li>
+          <li class="active"><a href="<%= root_path %>"><span class="fa fa-home desktop-home"></span><span class="mobile-show"></span></a></li>
         <% @catSections.each do |category| %>
           <li class="dropdown"><%= link_to category.name, pages_path(category_id: category.id) %></li>
         <% end %>

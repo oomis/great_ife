@@ -1,0 +1,2 @@
+class Oaue < ApplicationRecord
+end
