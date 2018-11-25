@@ -1,3 +1,11 @@
+<div>
+  <ul class="nav justify-content-end">
+  
+</ul>
+</div>
+
+
+
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -35,35 +43,23 @@
 
 <h1>Accommodations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @accommodations.each do |accommodation| %>
-      <tr>
-        <td><%= accommodation.title %></td>
-        <td><%= accommodation.body %></td>
-        <td><%= accommodation.price %></td>
-        <td><%= link_to 'View Page', accommodation %></td>
-
-        <% if shop_signed_in? %>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
-        <% else %>
-
-        <% end %>
-      </tr>
+<div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
+<% @accommodations.each do |accommodation| %>
+<div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
+  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h2 style = "margin-left: 11px;" class="card-title"><u><%= accommodation.title %></u></h2>
+    <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(accommodation.body, length: 70) %></p>
+    <div>
+    <h4 style = "margin-left: 23px; float: left" class="card-title"># <%= accommodation.price %></h4>
+    <button style = "margin-right: 23px; float: right" class="btn btn-primary" type="submit"><%= link_to 'Show', accommodation %></button>
+    </div>
+    <% if accommodation_signed_in? %>
+        <h5 style = "margin-left: 11px;"><%= link_to 'Edit', edit_accommodation_path(accommodation) %></h5>
+        <h5 style = "margin-left: 11px;"><%= link_to 'Destroy', accommodation, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Accommodation', new_accommodation_path %>
+  </div>
+</div>
+<% end %>
+</div>

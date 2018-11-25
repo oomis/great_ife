@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :oaues
   get 'contest/index'
   get 'oaue/index'
   devise_for :accommodations
@@ -13,12 +14,12 @@ Rails.application.routes.draw do
   get 'category/show'
   get 'pages/show'
   get 'home/show'
-  get 'oaue/index'
-  get 'contest/contest'
+  get '/oaue', to: 'oaue#index', as: :oaue
+  get '/contest', to: 'contest#index', as: :contest
   get 'shops/index'
   get 'accommodation/index'
   get '/secret', to: 'shops#secret', as: :secret
-  resources :carousel, :category, :pages, :oaue,:contest, only: [:show, :index]
+  resources :carousel, :category, :pages, :oaue, :contest, only: [:show, :index]
   root 'home#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

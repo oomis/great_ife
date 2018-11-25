@@ -33,11 +33,14 @@
 <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 <div class="container">
   
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <!--<p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>-->
   
   <%= render 'layouts/head' %>
+  <div>
+  <%= render 'layouts/nav' %>
   <%= yield %>
+  </div>
   <%= render 'layouts/footer'%>
   
 </div>

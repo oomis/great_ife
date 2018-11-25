@@ -1,26 +1,18 @@
 <h1>Oau Events</h1>
 
+
+<div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
 <% @mainE.each do |oaue| %>
-            <div class="media-body"> <a href="#" class="catg_title"> <%#=link_to raw page.body%></a></div>
-          </div>
-        </li>    
-      </ul>
+<div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
+  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h2 style = "margin-left: 11px;" class="card-title"><u><%= oaue.title %></u></h2>
+    <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(oaue.body, length: 70) %></p>
+    <div>
+    <h4 style = "margin-left: 23px; float: left" class="card-title"># <%= oaue.price %></h4>
+    <button style = "margin-right: 23px; float: right" class="btn btn-primary" type="submit"><%= link_to 'Show', oaue %></button>
     </div>
-  </div> 
-  <div style='padding-top:15px; padding-bottom:15px;'>
-<div class="card" style=' width:69%; margin:auto; '>
-  <div class='row card-body'>
-  <div class='col-md-4'>
-  <img class='img-responsive' src="<%#= oaue.image.url { link_to oaue_path(pagoauee.id)} %>" alt="Avatar">
-  
   </div>
-  <div class='col-md-8'>
-  <div  class="container">
-    <h4><b>   <%= link_to oaue.title, oaue_path(oaue.id)%> </b></h4>
-    <p><%=link_to truncate(oaue.body, length: 70) { link_to 'Read More', oaue_path(oaue.id)}%></p> 
-  </div>
-  </div>
-  </div>
-</div>
 </div>
 <% end %>
+</div>

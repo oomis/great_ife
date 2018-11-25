@@ -1,3 +1,17 @@
+<h1>Contest</h1>
+
+<div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
 <% @mainContest.each do |contest| %>
-    <li class="dropdown"><%=contest.title %></li>
+<div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
+  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h2 style = "margin-left: 11px;" class="card-title"><u><%= contest.title %></u></h2>
+    <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(contest.body, length: 70) %></p>
+    <div>
+    <h4 style = "margin-left: 23px; float: left" class="card-title"># <%= contest.price %></h4>
+    <button style = "margin-right: 23px; float: right" class="btn btn-primary" type="submit"><%= link_to 'Show', contest %></button>
+    </div>
+  </div>
+</div>
 <% end %>
+</div>

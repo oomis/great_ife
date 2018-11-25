@@ -46,7 +46,7 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'autoprefixer-rails'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap'
 gem 'jquery-rails'
 
 group :development, :test do

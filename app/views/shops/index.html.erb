@@ -1,20 +1,22 @@
+<div>
+  <ul class="nav justify-content-end">
+  
+</ul>
+</div>
+
+
+
+
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'Devise Demo', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Oau E-shops', root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar">
-     <ul class="nav navbar-nav">
-  <li><%= link_to 'shops', shops_path %></li>
-  <% if shop_signed_in? %>
-    <li><%= link_to 'Secret', secret_path %></li>
-  <% end %>
-</ul>
       <ul class="nav navbar-nav pull-right">
         <% if shop_signed_in? %>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <%#= current_shop.name %>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -23,6 +25,7 @@
             </ul>
           </li>
         <% else %>
+          <li style = "color: white;">Do you have something you want to sell, join campus biggest e-mall, just sign-up and sell now</li>
           <li><%= link_to 'Log In', new_shop_session_path %></li>
           <li><%= link_to 'Sign Up', new_shop_registration_path %></li>
         <% end %>
@@ -36,115 +39,23 @@
 
 <h1>Shops</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td><%= shop.title %></td>
-        <td><%= shop.body %></td>
-        <td><%= shop.price %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
-
-
-        <% if shop_signed_in? %>
-
-          
-          
-        <% else %>
+<div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
+<% @shops.each do |shop| %>
+<div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
+  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h2 style = "margin-left: 11px;" class="card-title"><u><%= shop.title %></u></h2>
+    <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(shop.body, length: 70) %></p>
+    <div>
+    <h4 style = "margin-left: 23px; float: left" class="card-title"># <%= shop.price %></h4>
+    <button style = "margin-right: 23px; float: right" class="btn btn-primary" type="submit"><%= link_to 'Show', shop %></button>
+    </div>
+    <% if shop_signed_in? %>
+        <h5 style = "margin-left: 11px;"><%= link_to 'Edit', edit_shop_path(shop) %></h5>
+        <h5 style = "margin-left: 11px;"><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
           
         <% end %>
-
-
-
-
-
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Shop', new_shop_path %>
-
-
-
-
-
-<!-- ##### Main Content Wrapper Start ##### -->
-    <div class="main-content-wrapper d-flex clearfix">
-
-       
-        <div class="amado_product_area section-padding-100">
-            <div class="container-fluid">
-
-                
-
-                <div class="row">
-                    <% @shops.each do |shop| %>
-                    <!-- Single Product Area -->
-                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img src="img/product-img/product1.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product2.jpg" alt="">
-                            </div>
-
-                            <!-- Product Description -->
-                            <div class="product-description d-flex align-items-center justify-content-between">
-                                <!-- Product Meta Data -->
-                                <div class="product-meta-data">
-                                    <div class="line"></div>
-                                    <p class="product-price">$<%= shop.price %></p>
-                                    <a href="product-details.html">
-                                        <h3><%= shop.title %></h3>
-                                    </a>
-                                    <a href="product-details.html">
-                                        <p><%= shop.body %></p>
-                                    </a>
-                                    <a href="product-details.html">
-                                        <p><%= link_to 'Show', shop %></p>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <% end %>
-
-                    
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Pagination -->
-                        <nav aria-label="navigation">
-                            <ul class="pagination justify-content-end mt-50">
-                                <li class="page-item active"><a class="page-link" href="#">01.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">04.</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Main Content Wrapper End ##### -->
-
+  </div>
+</div>
+<% end %>
+</div>
