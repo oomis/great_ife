@@ -48,6 +48,8 @@ gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'autoprefixer-rails'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

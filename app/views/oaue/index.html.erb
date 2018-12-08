@@ -4,8 +4,9 @@
 <div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
 <% @mainE.each do |oaue| %>
 <div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
-  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
   <div class="card-body">
+    <img class='img-responsive' src="<%= oaue.image.url %>" alt="Avatar">
+    <h2 style = "margin-left: 11px;" class="card-title"><u><%#= image_tag oaue.image.url %></u></h2>
     <h2 style = "margin-left: 11px;" class="card-title"><u><%= oaue.title %></u></h2>
     <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(oaue.body, length: 70) %></p>
     <div>

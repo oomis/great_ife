@@ -42,7 +42,7 @@
 <div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
 <% @shops.each do |shop| %>
 <div class="card " style="width: 38rem; margin-bottom: 20px; padding-bottom: 20px">
-  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="img/product-img/oau.jpg" alt="Card image cap">
+  <img class="card-img-top" style ="    width: 355px; margin: 12px;" src="<%#= @shop.image.thumb.url %>" alt="Card image cap">
   <div class="card-body">
     <h2 style = "margin-left: 11px;" class="card-title"><u><%= shop.title %></u></h2>
     <p style = "margin-left: 11px;" class="card-text"><%= link_to truncate(shop.body, length: 70) %></p>
@@ -59,3 +59,4 @@
 </div>
 <% end %>
 </div>
+

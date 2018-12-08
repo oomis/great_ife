@@ -15,7 +15,7 @@ class ShopsController < InheritedResources::Base
   private
 
     def shop_params
-      params.require(:shop).permit(:title, :body, :price)
+      params.require(:shop).permit(:title, :body, :price, :image)
     end
 end
 

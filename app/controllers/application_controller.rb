@@ -7,23 +7,23 @@ class ApplicationController < ActionController::Base
     end
 
     def getPageSection
-        @pageSections = Page.all
+        @pageSections = Page.all.order("created_at DESC")
     end
 
     def getCatSection
-        @catSections = Category.all
+        @catSections = Category.all.order("created_at DESC")
     end
 
     def getHeadCarousel
-        @headCarousel = Carousel.all
+        @headCarousel = Carousel.all.order("created_at DESC")
     end
 
     def getMainE
-        @mainE = Oaue.all
+        @mainE = Oaue.all.order("created_at DESC")
     end
 
     def getMainContest
-        @mainContest = Contest.all
+        @mainContest = Contest.all.order("created_at DESC")
     end
 
     def getPageBody

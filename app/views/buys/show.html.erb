@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @buy.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @buy.body %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @buy.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @buy.image %>
+</p>
+
+<%= link_to 'Edit', edit_buy_path(@buy) %> |
+<%= link_to 'Back', buys_path %>
