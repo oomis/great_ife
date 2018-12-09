@@ -1,12 +1,11 @@
 <section id="newsSection">
     <div class="row">
       <div class="col-lg-12 col-md-12">
-        <div class="latest_newsarea"> <span>Latest News</span>
+        <div class="latest_newsarea"> <span>announcements</span>
           <ul id="ticker01" class="news_sticker">
-          <% @pageSections.each do |page| %>
-          <li><a><%= link_to page.title, page_path(page.id) %></a></li>
-                    
-              <% end %>
+            <% @announcement.each do |announcement| %>
+              <li><a><%=announcement.title%></a></li>        
+            <% end %>
           </ul>
           <div class="social_area">
             <ul class="social_nav">
@@ -32,7 +31,7 @@
           
           <% @catSections.each do |category| %>
             <div class="fashion" style ="padding: 10px;">
-              <div class="single_post_content" style ="background-color: Seashell">
+              <div class="single_post_content" style ="background-color: ">
                 <h2><span><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
                 
                 <ul class="business_catgnav wow fadeInDown">

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :getPageSection, :getCatSection, :getHeadCarousel, :getMainE, :getPageBody, :getMainContest
+    before_action :getPageSection, :getCatSection, :getHeadCarousel, :getMainE, :getPageBody, :getMainContest, :getAnnouncement
     
     
     def home
@@ -28,5 +28,10 @@ class ApplicationController < ActionController::Base
 
     def getPageBody
     end
+
+    def getAnnouncement
+        @announcement = Announcement.all.order("created_at DESC")
+    end
+    
 
 end
