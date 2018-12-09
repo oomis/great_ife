@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :rents
+  devise_for :buys
   resources :rents
   resources :buys
   devise_for :oaues

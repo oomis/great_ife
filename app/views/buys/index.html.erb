@@ -47,23 +47,25 @@
     <div class="navbar-header">
       <%= link_to 'Oau E-buys', root_path, class: 'navbar-brand' %>
     </div>
+    
     <div id="navbar">
       <ul class="nav navbar-nav pull-right">
-        <%# if buy_signed_in? %>
+        <% if buy_signed_in? %>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><%#= link_to 'Profile', edit_buy_registration_path %></li>
-              <li><%#= link_to 'Log out', destroy_buy_session_path, method: :delete %></li>
+              <li><%= link_to 'Upload new product', new_buy_path %></li>
+              <li><%= link_to 'Profile', edit_buy_registration_path %></li>
+              <li><%= link_to 'Log out', destroy_buy_session_path, method: :delete %></li>
             </ul>
           </li>
-        <%# else %>
+        <% else %>
           <li style = "color: white;">Do you have something you want to sell, join campus biggest e-mall, just sign-up and sell now</li>
-          <li><%#= link_to 'Log In', new_buy_session_path %></li>
-          <li><%#= link_to 'Sign Up', new_buy_registration_path %></li>
-        <%# end %>
+          <li><%= link_to 'Log In', new_buy_session_path %></li>
+          <li><%= link_to 'Sign Up', new_buy_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -85,12 +87,16 @@
     <h4 style = "margin-left: 23px; float: left" class="card-title"># <%= buy.price %></h4>
     <button style = "margin-right: 23px; float: right" class="btn btn-primary" type="submit"><%= link_to 'Show', buy %></button>
     </div>
-    <%# if buy_signed_in? %>
+    <% if buy_signed_in? %>
         <h5 style = "margin-left: 11px;"><%= link_to 'Edit', edit_buy_path(buy) %></h5>
         <h5 style = "margin-left: 11px;"><%= link_to 'Destroy', buy, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
           
-        <%# end %>
+        <% end %>
   </div>
 </div>
 <% end %>
 </div>
+
+<% if buy_signed_in? %>
+  <%= link_to 'Upload New Product', new_buy_path %>
+<% end %>
