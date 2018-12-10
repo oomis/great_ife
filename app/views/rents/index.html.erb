@@ -1,46 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rents</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rents.each do |rent| %>
-      <tr>
-        <td><%= rent.title %></td>
-        <td><%= rent.body %></td>
-        <td><%= rent.price %></td>
-        <td><%= rent.image %></td>
-        <td><%= link_to 'Show', rent %></td>
-        <td><%= link_to 'Edit', edit_rent_path(rent) %></td>
-        <td><%= link_to 'Destroy', rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Rent', new_rent_path %>
-
-
 <div>
-  <ul class="nav justify-content-end">
-  
+  <ul class="nav justify-content-end">  
 </ul>
 </div>
-
-
-
 
 <nav class="navbar navbar-inverse">
   <div class="container">
@@ -61,7 +24,7 @@
             </ul>
           </li>
         <% else %>
-          <li style = "color: white;">Do you have something you want to sell, join campus biggest e-mall, just sign-up and sell now</li>
+          <li style = "color: white; padding-top: 15px;">Do you know about an hostel that is uo for rent? or are you an agent?, join campus biggest community, just sign-up and sell now</li>
           <li><%= link_to 'Log In', new_rent_session_path %></li>
           <li><%= link_to 'Sign Up', new_rent_registration_path %></li>
         <% end %>
@@ -73,7 +36,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>rents</h1>
+<h1>Accomodations</h1>
 
 <div class ="d-flex flex-warp" style = "display: flex; flex-flow: row wrap;">
 <% @rents.each do |rent| %>

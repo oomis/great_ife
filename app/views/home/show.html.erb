@@ -32,7 +32,7 @@
           <% @catSections.each do |category| %>
             <div class="fashion" style ="padding: 10px;">
               <div class="single_post_content" style ="background-color:">
-                <h2><span style="color: white !important;"><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
+                <h2><span><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
                 
                 <ul class="business_catgnav wow fadeInDown">
                 </ul>
@@ -92,28 +92,18 @@
       <div class="col-lg-4 col-md-4 col-sm-4" Style = "background-color: white;">
         <aside class="right_content">
           <div class="single_sidebar">
-            <h2><span>Popular Post</span></h2>
+            <h2><span>Oau Contest</span></h2> 
             <ul class="spost_nav">
-              <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                </div>
-              </li>
-              <li>
-                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                  <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                </div>
-              </li>
+
+              <% @mainContest.limit(4).each do |contest| %>
+                    <li>           
+                        <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="<%= contest.image.url %>"> </a>
+                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"><%= link_to contest.title, contest_path(contest.id) %></a> </div>
+                        </div>
+                    </li>
+              <% end %>
+
+              
             </ul>
           </div>
           <%# <div class="single_sidebar">
@@ -166,7 +156,7 @@
             </div>
           </div> %>
           <div class="single_sidebar wow fadeInDown">
-            <h2><span>Sponsored Ads</span></h2>
+            <h2><span>Articles</span></h2>
             <a class="sideAdd" href="#"><img src="images/add_img.jpg" alt=""></a> 
           </div>
         </aside>

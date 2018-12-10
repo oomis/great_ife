@@ -3,13 +3,13 @@
       <div class="col-lg-8 col-md-8 col-sm-8">
         <div class="slick_slider">
           <% @headCarousel.each do |carousel| %>
-        <div class="single_iteam"> <a href="#"> <%= image_tag carousel.image.url %> </a>
-            <div class="slider_article">
-                <h2><a class="slider_tittle" href="#"><%= carousel.title %></a></h2>
-                <p><%=raw carousel.body %></p>
+            <div class="single_iteam"> <a href="#"> <%= image_tag carousel.image.url %> </a>
+                <div class="slider_article">
+                    <h2><a class="slider_tittle" href="#"><%= carousel.title %></a></h2>
+                    <p><%=raw carousel.body %></p>
+                </div>
             </div>
-        </div>
-    <% end %>
+          <% end %>
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4" style="margin-bottom: 30px; height: 300px;">

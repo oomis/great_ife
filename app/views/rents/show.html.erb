@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @rent.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @rent.body %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @rent.price %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @rent.image %>
-</p>
-
-<%= link_to 'Edit', edit_rent_path(@rent) %> |
-<%= link_to 'Back', rents_path %>
+<section id="contentSection" style = "margin-top: 11px">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="left_content">
+          <div class="single_page">
+            <h1><%= raw @rent.title%></h1>
+            <div class="single_page_content"> <img class="img-center" src="<%= @rent.image.url %>" alt="">
+              <%= raw @rent.body%>
+            </div>
+            <h1 style = "float: right;"><span style = "font-size:25px">Price: </span>#<%= @rent.price%>.00</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to '<< Go back to our accommodations', rents_path %>
+  </section>
