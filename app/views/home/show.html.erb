@@ -31,17 +31,10 @@
           
           <% @catSections.each do |category| %>
             <div class="fashion" style ="padding: 10px;">
-              <div class="single_post_content" style ="background-color: ">
-                <h2><span><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
+              <div class="single_post_content" style ="background-color:">
+                <h2><span style="color: white !important;"><%= link_to category.name, pages_path(category_id: category.id) %></span></h2>
                 
                 <ul class="business_catgnav wow fadeInDown">
-                
-                  <%# <li>
-                    <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img2.jpg"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
-                      <p></p>
-                    </figure>
-                  </li> %>
                 </ul>
                 <ul class="spost_nav">    
                         <% category.pages.limit(4).each do |page| %>

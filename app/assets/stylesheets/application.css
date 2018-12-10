@@ -30,3 +30,26 @@
                         .container {
                             padding: 2px 16px;
                         }
+                        
+                        @font-face {
+                            font-family: 'fontawsome-webfont';
+                            src: url('/assets/fontawsome-webfont.eot');
+                            font-family: 'fontawsome-webfont';
+                            src: url('/assets/fontawsome-webfont.ttf');
+                            font-family: 'fontawsome-webfont';
+                            src: url('/assets/fontawsome-webfont.woff');
+                            font-family: 'fontawsome-webfont';
+                            src: url('/assets/fontawsome-webfont.otf');
+                            font-family: 'glyphicons-halfling-regular';
+                            src: url('/assets/glyphicons-halfling-regular.eot');
+                            font-family: 'glyphicons-halfling-regular';
+                            src: url('/assets/glyphicons-halfling-regular.ttf');
+                            font-family: 'glyphicons-halfling-regular';
+                            src: url('/assets/glyphicons-halfling-regular.woff');
+                            font-family: 'OpenSans-400';
+                            src: url('/assets/OpenSans-400.woff');
+                            font-family: 'Oswald-Regular-400';
+                            src: url('/assets/Oswald-Regular-400.woff');
+                            font-family: 'Verela-400';
+                            src: url('/assets/Verela-400.woff');
+                        }
