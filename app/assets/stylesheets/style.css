@@ -293,7 +293,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
                     
                     .header_bottom {
                         background-color: #fff;
-                        display: inline;
+                        display: flex;
                         float: left;
                         padding: 15px 30px 15px;
                         width: 100%
@@ -1707,6 +1707,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
                     }
                     
                     @media(max-width:767px) {
+                        .add_banner {
+                            display: none;
+                        }
                         .navbar-collapse {
                             padding-left: 15px
                         }
